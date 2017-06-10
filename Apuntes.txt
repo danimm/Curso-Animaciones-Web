@@ -1,0 +1,30 @@
+Animaciones web: sintaxis
+
+Animacion siempre recibe un nombre y una duracion
+
+animation-name: cuadrado;
+animation-duration: 1s;
+/*          animation-delay: 1s;*/
+/*N.Veces   animation-iteration-count: infinite;
+/*Suavizado animation-timing-function: ease;
+/*En que momento es mas rapida o mas lenta 
+            animation-direction: alternate;
+/*Visible-invi.-invi-visiblae*/
+/*Relleno animation-fill-mode: forwards;
+            /*El elemento se queda COMO TERMINE LA ANIMACION*/
+/*Paused-running  animation-play-state: running;
+            position: relative; /*Para que el left right funcione(o absolute)*/
+
+Aceleración y curva de bezier
+En este vídeo vamos a aprender a dar aceleración y movimientos curvos a los elementos web por medio de animation-timing-function:ease
+
+- animation-timing-function:ease ; nos va a dar una aceleracion por defecto.
+animation-timing-function:ease-in; mas lento al iniciar la animacion.
+animation-timing-function:ease-out; mas lento al terminar la animacion.
+animation-timing-function:ease-in-out; lento al principio y al final, parece un pendulo.
+animation-timing-function:linear; velocidad constante, sin aceleracion ni "frenada". Es la misma en todo el tiempo de la animación.
+animation-timing-function:steps(60); Por pasos hay que especificar el numero de pasos, en este caso son 60 pasos en la duration 1s.Si bajamos
+los frames por segundo parece como si hubiera lag.
+animation-timing-function: cubic-bezier(1, 1, 1, 1); Siempre cuatro pasos desde negativos hasta positivos.
+	-Todo 1 es como si fuera linear.
+	-

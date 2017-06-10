@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sintaxis de Animaciones</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: arial;
+        }
+        .container{
+            border: 1px solid red;
+            width: 100%;
+           
+        }
+        .container:hover .cuadrado{
+            
+        }
+        .cuadrado{
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            margin: 20px;
+            border-radius: 50%;
+/*            transition: .3s;*/
+            animation-name: cuadrado;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            position: relative;
+            animation-direction: alternate;
+/*          animation-delay: 1s;*/
+/*N.Veces   animation-iteration-count: infinite;
+/*Suavizado animation-timing-function: ease;
+/*En que momento es mas rapida o mas lenta 
+            animation-direction: alternate;
+/*Visible-invi.-invi-visiblae*/
+/*Relleno animation-fill-mode: forwards;
+            /*El elemento se queda COMO TERMINE LA ANIMACION*/
+/*Paused-running  animation-play-state: running;
+            position: relative; /*Para que el left right funcione(o absolute)*/
+        }
+        @keyframes cuadrado{
+            0%{
+                left: 0;
+            }
+            100%{
+                left: calc(100% - 240px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="cuadrado">
+        hola mundo!
+    </div>
+        
+    </div>
+    
+</body>
+</html>

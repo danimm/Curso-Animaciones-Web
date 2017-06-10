@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sintaxis de Animaciones</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: arial;
+        }
+        .container{
+            border: 1px solid red;
+            width: 100%;
+           
+        }
+        .container:hover .cuadrado{
+            
+        }
+        .cuadrado{
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            margin: 20px;
+            border-radius: 50%;
+/*            transition: .3s;*/
+            animation-name: cuadrado;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            position: relative;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(.75, -0.31, .33, 1.4);
+            
+        }
+        @keyframes cuadrado{
+            0%{
+                left: 0;
+            }
+            100%{
+                left: calc(100% - 240px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="cuadrado">
+        hola mundo!
+    </div>
+        
+    </div>
+    
+</body>
+</html>
