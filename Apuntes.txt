@@ -27,4 +27,15 @@ animation-timing-function:steps(60); Por pasos hay que especificar el numero de 
 los frames por segundo parece como si hubiera lag.
 animation-timing-function: cubic-bezier(1, 1, 1, 1); Siempre cuatro pasos desde negativos hasta positivos.
 	-Todo 1 es como si fuera linear.
-	-
+
+-----------
+
+animation-name: cuadrado, rebote; -> si no asignamos algo personalizado a la segunda animacion ambas van a tomar la misma configuracion.
+
+Las animaciones se pueden crear por % (del 0 al 100) o por medio de shorcouts: para el 0% seria from y para el 100% seria to.
+Se podria seguir utilizando porcentajes entre los dos shorcouts.
+
+-----------------------
+
+La etiqueta Will change se utiliza para avisar al navegador de que va a haber un cambio en esas etiquetas que seleccionemos por ejm. will-change: opacity, transform;
+Asi cuando la animacion ocurra el navegador no tiene que hacer un repintado cuando termine la animacion. Mejora el render de la pagina.
