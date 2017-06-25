@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript element.animate</title>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      .container{
+        width: 600px;
+        border: 1px solid red;
+      }
+      .pelota {
+        width: 100px;
+        height: 100px;
+        background: red;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="pelota" id="pelota"></div>
+    </div>
+    <script type="text/javascript">
+      const $pelota = document.getElementById('pelota');
+
+      // element.animate(keyframes = [], option = {})
+      const animation = $pelota.animate([
+        // from
+        {
+          transform: 'translateX(0)'
+        },
+        // to
+        {
+          transform: 'translateX(500px)' // 250
+        }
+      ],{
+        // duration: duracion
+        // delay: tiempo de demora en avanzar
+        // direction:izq > der o al reves..
+        // easing: aceleracion
+        // iterations: iteraciones
+        // fill: como quiero que los estilos se queden del final del principio.. finales seria fordward
+        // iterationStart: seleccionar en que parte de la animacion empieza .5 es como el 50% de la animacion
+        // endDelay:el delay despues de cuando se acaba la animacion.
+        duration: 1000,
+        delay: 1000, // 1 segundo
+        direction: 'normal', // reverse, alternate, etc...
+        easing: 'linear', // easy, curva de dosier
+        iterations: Infinity,
+         // cuantas veces.*NOTA se utiliza el Infinity de JS
+        fill: 'forwards', // se queda con los estilos finales.
+        iterationStart: .5,
+
+      })
+    </script>
+  </body>
+</html>
