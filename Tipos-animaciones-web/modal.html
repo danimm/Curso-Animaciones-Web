@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animaciones de entrada y salida</title>
+  <link rel="stylesheet" href="icomoon/style.css">
+  <style>
+    body{
+      display: flex;
+      /*height: 100vh;*/
+
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      font-family: arial;
+      flex-direction: column;
+    }
+    .icon-cross:before {
+      content: "\ea0f";
+    }
+    .btn{
+      text-align: center;
+      background: lightgray;
+      padding: .6em .8em .8em;
+      border: none;
+      color: white;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: inset 0 -.2em rgba(0, 0, 0, .2);
+      outline: 0;
+      transition: .2s;
+      will-change: transform;
+    }
+    .btn.primary{
+      background: #7dc800;
+    }
+    .btn.warning{
+      background: #ff463b;
+    }
+    .overlay{
+      background: rgba(0, 0, 0, .8);
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 1.1s ease-in;  /*mas lento al principio*/
+      opacity: 0;
+      visibility: hidden;
+    }
+    .overlay.active{
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal{
+      /*width: 200px;
+      height: 200px;*/
+      width: 500px;
+      position: relative;
+      background: white;
+      text-align: center;
+      /*animation: name time estado*/
+      animation: modalIn .8s;
+      /*animation: animationOut .8s forwards;*/
+      padding: 2em;
+      border-radius: .5em; /* 8px porque 16 x defect*/
+    }
+    .icon-cross{
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+
+    @keyframes modalIn {
+      0%{
+        transform: translateY(-3000px);
+      }
+      60%{
+        transform: translateY(25px);
+      }
+      75%{
+        transform: translateY(-10px);
+      }
+      90%{ /*Si no declaro el 100% vuelve a su posicion original*/
+        transform: translateY(5px);
+      }
+    }
+
+    @keyframes modalOut {
+      0%{
+        transform: translateY(5px);
+      }
+      60%{
+        transform: translateY(-10px);
+      }
+      75%{
+        transform: translateY(25px);
+      }
+      100%{/*hay que indicar el 100% si no volveria a su posicion original*/
+        transform: translateY(-3000px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="platzi.png" alt="">
+  <div class="overlay active" id="overlay">
+    <div class="modal" id="modal">
+      <span id="close" class="icon-cross"></span>
+      <h1>Atención</h1>
+      <p>Estas a punto de crear una ventana de modal muy guay | cool | chevere</p>
+      <p>te gustó?</p>
+      <div class="modal-buttons">
+        <button class="btn primary" id="hide-modal">
+          Si, está chido
+        </button>
+        <button class="btn warning">
+          No, es un bodrio :(
+        </button>
+      </div>
+    </div>
+  </div>
+<script>
+  const $hideButton = document.getElementById('hide-modal');
+  const $modal = document.getElementById('modal');
+  const $overlay = document.getElementById('overlay');
+  const $close = document.getElementById('close');
+  $hideButton.addEventListener('click', (event) =>{
+    console.log(event);
+    $modal.style.animation = 'modalOut .8s forwards';
+    $overlay.classList.remove('active');  // add o remove
+  });
+  $close.addEventListener('click', (event) =>{
+    $modal.style.animation = 'modalOut .8s forwards';
+    $overlay.classList.remove('active');
+  })
+  $overlay.addEventListener('click', (event) =>{
+    $modal.style.animation = 'modalOut .8s forwards';
+    $overlay.classList.remove('active');
+  })
+</script>
+</body>
+</html>
