@@ -1,4 +1,13 @@
 import React, { Component } from 'react';
+import { connect} from 'react-redux';
+
+import CSSTransitionGroup from 'react-addons-css-transition-group';
+
+function mapStateToProps(state){
+  return{
+    precio: state.precio,
+  }
+}
 
 class Precios extends Component {
   render() {
@@ -44,9 +53,19 @@ class Precios extends Component {
                  <div className="contenedorPAX">
                    <h4 className="NPax">{tipo.nPersonas}</h4>
                  </div>
-                 <div className="precioDia" key={index}>
+                 <CSSTransitionGroup
+                   transitionName="flicker"
+                   transitionEnterTimeout={500}
+                   transitionLeaveTimeout={500}
+                   transitionLeave={false}
+                   >
+                 <div className="precioDia" key={tipo.precioDia}>
                    <h2>{tipo.precioDia}</h2>
                  </div>
+               </CSSTransitionGroup>
+
+               <CSSTransitionGroup
+                 transitionName="shake">
                  <div className="precioDetalles">
                    {
                      tipo.features.map((feature, index) => {
@@ -55,6 +74,7 @@ class Precios extends Component {
                      )
                    })}
                  </div>
+               </CSSTransitionGroup>
                  <div className="precioButton">
                    <a href="#" className="button reservar">Reservar</a>
                  </div>
@@ -66,4 +86,4 @@ class Precios extends Component {
     )}
 }
 
-export default Precios;
+export default connect(mapStateToProps)(Precios);

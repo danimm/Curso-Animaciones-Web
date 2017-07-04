@@ -13,7 +13,7 @@
 body{
     margin: 0 auto;
     font-family: 'Lora', serif;
-    
+
     /* Portada */
 }
 h3{
@@ -31,7 +31,7 @@ h3{
     background: rgba(39,59,71,.3);
     border-radius: 20px;
     margin: 0 auto;
-    
+
     animation: 8s flash;
 }
 @keyframes flash{
@@ -90,14 +90,14 @@ h3{
     display: flex;
     align-items: center;
     opacity: 1;
-    
+
 }
 .titulo{
     font-size: 60px;
     margin-bottom: 10px;
     color: white;
     padding-top: 10px;
-    
+
 }
 .button:hover{
     opacity: 0;
@@ -146,27 +146,27 @@ h3{
 }
 .imagen1{
     background: url(../images/portada/imagen1.jpg) no-repeat center;
-    background-size: cover; 
+    background-size: cover;
 }
 .imagen2{
     background: url(../images/portada/imagen2.JPG) no-repeat center;
-    background-size: cover; 
+    background-size: cover;
 }
 .imagen3{
     background: url(../images/portada/imagen3.JPG) no-repeat center;
-    background-size: cover; 
+    background-size: cover;
 }
 .imagen4{
     background: url(../images/portada/imagen4.JPG) no-repeat center;
-    background-size: cover; 
+    background-size: cover;
 }
 .imagen5{
     background: url(../images/portada/imagen5.JPG) no-repeat center;
-    background-size: cover; 
+    background-size: cover;
 }
 
 .right{
-    
+
     flex:1;
     order: 2;
 }
@@ -266,7 +266,7 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;    
+    flex-direction: column;
 }
 .contTempAlta,.contTempBaja,.contOfertas{
     width: 100%;
@@ -275,7 +275,7 @@ h3{
     margin-bottom: 50px;
 }
 .tipo1{
-    
+
     box-shadow: 2px 2px 5px #999;
     width: 340px;
     height: 400px;
@@ -288,7 +288,7 @@ h3{
     padding-bottom: 20px;
 }
 .tipo2{
-    
+
     box-shadow: 2px 2px 5px #999;
     width: 440px;
     height: 450px;
@@ -415,7 +415,7 @@ td{
     flex:0 0 25%;
     height: 100%;
     width: 100%;
-    
+
 }
 .item img{
     min-width: 280px;
@@ -424,13 +424,13 @@ td{
 }
 /* Media Querie para galeria 1230px */
 @media screen and (max-width:1230px){
-    
+
     .item img {
         min-width:inherit;
     width: 90%;
     max-width: 250px;
 }
-    
+
 }
 /* Media Querie para pc pequeño */
 
@@ -440,7 +440,7 @@ td{
         height: 100%;
         flex: 0 0 30%;
         padding: 18px 0;
-        
+
     }
     .tipo1 .contenedorPAX h4 {
         left: 22%;
@@ -473,7 +473,7 @@ td{
         height: 100%;
         flex: 0 0 30%;
         padding: 18px 0;
-        
+
     }
     .tipo1 .contenedorPAX h4 {
         left: 22%;
@@ -485,7 +485,7 @@ td{
         padding: 18px 0 18px 0;
     }
     /*Footer */
-    
+
     .contenedor.cont {
         display: block;
     }
